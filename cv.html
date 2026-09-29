@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abraham Kanmadozo - CV</title>
+<style>
+    @page {
+        size: A4;
+        margin: 0;
+    }
+    
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #333333;
+        background-color: #ffffff;
+        font-size: 10.5pt;
+        line-height: 1.4;
+    }
+
+    /* Table de mise en page principal */
+    .cv-table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        min-height: 100vh;
+    }
+
+    .left-col {
+        width: 35%;
+        background-color: #1e293b;
+        color: #ffffff;
+        vertical-align: top;
+        padding: 25px 18px;
+    }
+
+    .right-col {
+        width: 65%;
+        background-color: #ffffff;
+        vertical-align: top;
+        padding: 30px 25px;
+    }
+
+    /* Header Profile */
+    .profile-section {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    .avatar-box {
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        border: 4px solid #38bdf8;
+        margin: 0 auto 15px auto;
+        display: block;
+        object-fit: cover;
+    }
+
+    .candidate-name {
+        font-size: 18pt;
+        font-weight: 800;
+        letter-spacing: 1px;
+        color: #ffffff;
+        margin: 0 0 5px 0;
+        text-transform: uppercase;
+    }
+
+    /* Titres Sidebar */
+    .sidebar-section {
+        margin-bottom: 22px;
+    }
+
+    .sidebar-title {
+        font-size: 11pt;
+        font-weight: 700;
+        color: #38bdf8;
+        border-bottom: 2px solid #334155;
+        padding-bottom: 4px;
+        margin-bottom: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+    }
+
+    .contact-item {
+        font-size: 9.5pt;
+        margin-bottom: 8px;
+        word-break: break-all;
+        color: #cbd5e1;
+    }
+
+    /* Barres de niveau */
+    .skill-item {
+        margin-bottom: 10px;
+    }
+
+    .skill-label {
+        font-size: 9pt;
+        color: #e2e8f0;
+        margin-bottom: 3px;
+        display: block;
+    }
+
+    .progress-bar-bg {
+        background-color: #334155;
+        height: 7px;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+
+    .progress-bar-fill {
+        background-color: #38bdf8;
+        height: 100%;
+        border-radius: 4px;
+    }
+
+    .sidebar-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .sidebar-list li {
+        font-size: 9.5pt;
+        color: #cbd5e1;
+        margin-bottom: 6px;
+        position: relative;
+        padding-left: 14px;
+    }
+
+    .sidebar-list li::before {
+        content: "•";
+        color: #38bdf8;
+        position: absolute;
+        left: 0;
+        font-weight: bold;
+    }
+
+    /* Contenu Principal */
+    .main-section {
+        margin-bottom: 22px;
+    }
+
+    .main-title {
+        font-size: 13pt;
+        font-weight: 700;
+        color: #1e293b;
+        border-bottom: 2px solid #0284c7;
+        padding-bottom: 4px;
+        margin-bottom: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .about-text {
+        font-size: 10pt;
+        color: #475569;
+        text-align: justify;
+        line-height: 1.5;
+        margin: 0;
+    }
+
+    .timeline-item {
+        margin-bottom: 14px;
+    }
+
+    .timeline-header {
+        font-weight: 700;
+        font-size: 10.5pt;
+        color: #0f172a;
+    }
+
+    .timeline-sub {
+        font-size: 9.5pt;
+        color: #0284c7;
+        font-weight: 600;
+        margin-bottom: 2px;
+    }
+
+    .timeline-date {
+        font-size: 8.5pt;
+        color: #64748b;
+        font-style: italic;
+    }
+
+    .timeline-desc {
+        font-size: 9.5pt;
+        color: #475569;
+        margin-top: 3px;
+        line-height: 1.4;
+    }
+
+    .cert-list {
+        padding-left: 18px;
+        margin: 6px 0 0 0;
+    }
+
+    .cert-list li {
+        font-size: 9pt;
+        color: #475569;
+        margin-bottom: 3px;
+    }
+
+    .software-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .software-table td {
+        padding: 4px 8px 4px 0;
+        vertical-align: middle;
+    }
+
+    .sw-name {
+        font-size: 9.5pt;
+        font-weight: 600;
+        color: #334155;
+        width: 35%;
+    }
+
+    .sw-bar-bg {
+        background-color: #e2e8f0;
+        height: 8px;
+        border-radius: 4px;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .sw-bar-fill {
+        background-color: #0284c7;
+        height: 100%;
+        border-radius: 4px;
+    }
+
+    .sw-pct {
+        font-size: 8.5pt;
+        color: #64748b;
+        text-align: right;
+        width: 12%;
+    }
+
+    @media print {
+        body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+</style>
+</head>
+<body>
+
+<table class="cv-table">
+    <tr>
+        <!-- COLONNE GAUCHE (SIDEBAR) -->
+        <td class="left-col">
+            <div class="profile-section">
+                <!-- VOTRE PHOTO DE PROFIL ICI -->
+                <img src="photo.jpg" class="avatar-box" alt="Abraham Kanmadozo">
+                <div class="candidate-name">Abraham<br>Kanmadozo</div>
+            </div>
+
+            <!-- CONTACT -->
+            <div class="sidebar-section">
+                <div class="sidebar-title">Contact</div>
+                <div class="contact-item">☎ +227 90 23 17 27</div>
+                <div class="contact-item">✉ kanmadozoabraham01@gmail.com</div>
+                <div class="contact-item">🖈 Quartier Sagagourou</div>
+            </div>
+
+            <!-- LANGUES (Anglais ajusté à 50%) -->
+            <div class="sidebar-section">
+                <div class="sidebar-title">Compétences Linguistiques</div>
+                
+                <div class="skill-item">
+                    <span class="skill-label">French 90%</span>
+                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 90%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-label">Fon 90%</span>
+                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 90%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-label">Zarma 80%</span>
+                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 80%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-label">English 50%</span>
+                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 50%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-label">Hausa 20%</span>
+                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 30%;"></div></div>
+                </div>
+            </div>
+
+            <!-- COMPÉTENCES PERSONNELLES -->
+            <div class="sidebar-section">
+                <div class="sidebar-title">Competences Personnelles et comportementales</div>
+                <ul class="sidebar-list">
+                    <li>Adaptabilité</li>
+                    <li>Creativité</li>
+                    <li>pensé critique</li>
+                    <li>Esprit d'Analyse</li>
+                    <li>Gestion du Temps</li>
+                    <li>Auto-Motivation</li>
+                    <li>Agilité et gestion du changement</li>
+                    <li>Leadership</li>
+                    <li>Resilience</li>
+                    <li>developpement personnel</li>
+                </ul>
+            </div>
+
+            <!-- LOISIRS -->
+            <div class="sidebar-section">
+                <div class="sidebar-title">Centres d'interêt et loisirs</div>
+                </div>
+                <ul class="sidebar-list">
+                    <li>Lecteure</li>
+                    <li>musique</li>
+                    <li>Dance</li>
+                    <li>Fitness</li>
+                </ul>
+            </div>
+        </td>
+
+        <!-- COLONNE DROITE (CONTENU PRINCIPAL) -->
+        <td class="right-col">
+            <!-- À PROPOS -->
+            <div class="main-section">
+                <div class="main-title">A propos de Moi</div>
+                <p class="about-text">
+                    Passionné, curieux et résolument tourné vers les autres, je combine ma résilience et ma détermination pour relever des défis complexes. Passionné par le développement personnel, je cherche constamment à évoluer, à apprendre et à donner le meilleur de moi-même.
+
+Actuellement en Master ( Management plus Big Data and business intelligence), ma priorité est d'analyser des problèmes concrets et de concevoir des solutions numériques utiles pour améliorer le quotidien de mon entourage. Toujours avide de nouvelles connaissances, j'aime explorer de nouveaux horizons, voyager, lire, écouter de la musique et danser. Fort de mes compétences en gestion de projet, communication et travail d'équipe, je m'investis pleinement pour apprendre, transmettre et créer un impact positif autour de moi.
+                </p>
+            </div>
+
+            <!-- EXPÉRIENCE PROFESSIONNELLE -->
+            <div class="main-section">
+                <div class="main-title"> Experiences</div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-header">AfricaYcone (Digital Company)</div>
+                    <div class="timeline-sub">Analyste Communication Manager & Community Manager</div>
+                    <div class="timeline-desc">Responsable des stratégies de communication, de la gestion de contenu, des tests de qualité fonctionnelle et de l'engagement de l'audience sur l'ensemble des plateformes numériques.</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header">Niger Telecom (programme Kohar Aiki 2025-2026)</div>
+                    <div class="timeline-sub">Digital & Financial Services Department</div>
+                    <div class="timeline-desc">A éffectuer un stage au sein de la Direction Services Numériques et Financiers de Niger Telecom, en se concentrant sur les solutions de services numériques et le support opérationnel.</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header">CodeLococol (2022)</div>
+                    <div class="timeline-sub">Project, Technology & Programming Intern</div>
+                    <div class="timeline-desc">Stage axé sur les cadres de gestion de projet, les fondamentaux de la programmation (langage C) et l'intégration des technologies.</div>
+                </div>
+            </div>
+
+            <!-- ÉDUCATION -->
+            <div class="main-section">
+                <div class="main-title">Educations</div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header">ENEB Campus(En Ligne)</div>
+                    <div class="timeline-sub">Master in AI for Business</div>
+                    <div class="timeline-date">2026 – 2027</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header">ENEB Campus(En Ligne)</div>
+                    <div class="timeline-sub">Double Master in Management + Business Intelligence and Big Data</div>
+                    <div class="timeline-date">2025 – 2026</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header">African Development University</div>
+                    <div class="timeline-sub">Bachelor in Project Management</div>
+                    <div class="timeline-date">2020 – 2023</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header">CSP Siloé</div>
+                    <div class="timeline-sub">Baccalaureate (Series Scientifique)</div>
+                    <div class="timeline-date">2019 – 2020</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header">CSP Kadeschua</div>
+                    <div class="timeline-sub">Certificat BEPC</div>
+                    <div class="timeline-date">2015 – 2016</div>
+                </div>
+            </div>
+
+            <!-- CERTIFICATIONS -->
+            <div class="main-section">
+                <div class="main-title">Certifications En Ligne(Coursera)</div>
+                <ul class="cert-list">
+                    <li><strong>Managing Talent</strong> (December 2022)</li>
+                    <li><strong>Fundamentals of Project Planning and Management</strong></li>
+                    <li><strong>Initiating and Planning Projects</strong> (June 2023)</li>
+                    <li><strong>Create a Simple Gantt Chart using Microsoft Excel</strong></li>
+                    <li><strong>Understanding Research Methods</strong></li>
+                    <li><strong>Budgeting and Scheduling Projects</strong></li>
+                </ul>
+            </div>
+
+            <!-- COMPÉTENCES INFORMATIQUES -->
+            <div class="main-section">
+                <div class="main-title">Compétences Informatiques</div>
+                <table class="software-table">
+                    <tr>
+                        <td class="sw-name">PowerPoint</td>
+                        <td><div class="sw-bar-bg"><div class="sw-bar-fill" style="width: 80%;"></div></div></td>
+                        <td class="sw-pct">80%</td>
+                    </tr>
+                    <tr>
+                        <td class="sw-name">Word</td>
+                        <td><div class="sw-bar-bg"><div class="sw-bar-fill" style="width: 80%;"></div></div></td>
+                        <td class="sw-pct">80%</td>
+                    </tr>
+                    <tr>
+                        <td class="sw-name">Canva Design</td>
+                        <td><div class="sw-bar-bg"><div class="sw-bar-fill" style="width: 80%;"></div></div></td>
+                        <td class="sw-pct">80%</td>
+                    </tr>
+                    <tr>
+                        <td class="sw-name">MS Project</td>
+                        <td><div class="sw-bar-bg"><div class="sw-bar-fill" style="width: 50%;"></div></div></td>
+                        <td class="sw-pct">50%</td>
+                    </tr>
+                    <tr>
+                        <td class="sw-name">Photoshop</td>
+                        <td><div class="sw-bar-bg"><div class="sw-bar-fill" style="width: 50%;"></div></div></td>
+                        <td class="sw-pct">50%</td>
+                    </tr>
+                   
+                    <tr>
+                        <td class="sw-name">Excel</td>
+                        <td><div class="sw-bar-bg"><div class="sw-bar-fill" style="width: 40%;"></div></div></td>
+                        <td class="sw-pct">30%</td>
+                    </tr>
+                     <tr>
+                        <td class="sw-name">Power BI</td>
+                        <td><div class="sw-bar-bg"><div class="sw-bar-fill" style="width: 40%;"></div></div></td>
+                        <td class="sw-pct">30%</td>
+                         <tr>
+                        <td class="sw-name">Trello</td>
+                        <td><div class="sw-bar-bg"><div class="sw-bar-fill" style="width: 40%;"></div></div></td>
+                        <td class="sw-pct">30%</td>
+                    </tr>
+                    </tr>
+                </table>
+            </div>
+
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>
